@@ -30,6 +30,6 @@ jobs:
     - name: Build the app
       run: npm install
     - name: Install playwright
-      run: npm install-test
+      run: npx playwright install
     - name: Run unit tests
       run: npm test
