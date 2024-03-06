@@ -8,6 +8,7 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -29,4 +30,4 @@ jobs:
     - name: Build the app
       run: npm install
     - name: Run unit tests
-      run: npm test-ui
+      run: npm test
