@@ -36,3 +36,13 @@ jobs:
       run: sleep 5
     - name: Run tests
       run: npm run test
+
+  deploy-backend:
+    needs: build-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_BACKEND_ID }}
+          api-key: ${{ secrets.MY_RENDER_API_KEY }}
